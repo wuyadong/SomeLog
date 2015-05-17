@@ -13,6 +13,20 @@ gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/cont
 - [iTerm2](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/README.html) 可以直接 brew cask install iterm2
 - [GIT](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/Git/README.html)等
 
+##HomeBrew
+###安装homebrew
+[github上安装说明](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md),但是不知道为何homebrew的主页打不开，所以用了手动方式进行安装。
+
+我是安装在 ~/apps/homebrew
+
+```sh
+cd ~/apps
+mkdir homebrew && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
+ln -s /Users/xxx/apps/homebrew/bin/brew /usr/local/bin/brew
+```
+软链接到/usr/local/bin目录下，我本机上默认没有/usr/local目录，还挺奇怪～～
+手动建立目录，并将其owner切换为自己的账户，这样就不用老是sudo了
+
 ----
 ## 一些快捷键设置
 
@@ -27,20 +41,20 @@ gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/cont
 网上可以搜到各种[方法](http://www.readern.com/ntfs-on-mac-os-x.html),还是觉得用原生的方式比较好，网上的说法很多有错误。记录下自己的实践。
 
 ###修改mount_ntfs
-```
+```sh
 cd /System/Library/Filesystems/ntfs.fs/Contents/Resources
 sudo mv mount_ntfs mount_ntfs.orig
 sudo vim mount_ntfs
 ```
 mount_ntfs内容:
 
-```
+```sh
 #!/bin/sh
 /System/Library/Filesystems/ntfs.fs/Contents/Resources/mount_ntfs.orig -o rw,nobrowse "$@"
 ```
 注意：*nobrowse*是必须要的；否则挂载后还是只读，原因不明。
 ###删除原来的挂载点
-```
+```sh
 cd /Volumes
 diskutil list #看下硬盘信息
 diskutil unmountDisk xxx #将NTFS磁盘卸载掉，如果是单个分区，用unmount命令逐个卸载
@@ -51,12 +65,17 @@ sudo rm -rf xxx #将/Volumes下原来的挂载点目录删掉，否则后续挂�
 因为上面使用了nobrowse参数，重启Finder会看不到，使用不方便
 在Finder使用快捷键 shift+command+G 跳转到/Volumes，然后将需要用的目录拖到个人收藏即可
 
+-----
 
 ##唤醒后声音不正常
-重新加载下驱动,写了个脚本
+重新加载下驱动,写了个脚本；备注：这个应该是MAC操作系统的bug，网上看到很多案例，不知道何时修复
 
-```
+```sh
 #!/bin/bash
 sudo kextunload /System/Library/Extensions/AppleHDA.kext
 sudo kextload /System/Library/Extensions/AppleHDA.kext
 ```
+
+-----
+##一些软件
+rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
