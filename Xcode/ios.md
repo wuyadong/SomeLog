@@ -17,3 +17,14 @@ if (_firstObject) //_
 ![汇编对比](./self_diff.tiff)
 
 可以明确看出，使用self时 `calll	L_objc_msgSend$stub`。从效果来说，在默认情况下，这两者没有差别，但是如果有覆盖getter/setter方法时，下划线\_ 方式就可能出错了。因此应该尽量使用self来访问，除了init, getter/setter等方法，避免后续代码修改时出现错误。
+
+
+
+### 记录
+introspection 内省的主要用途有两个：
+1. 数组中获取变量
+2. MVC中盲通信，如委托、目标动作等
+
+NSlog中%@替代的是description调用 - [obj description]
+
+属性列表 - property list --没有弄明白
