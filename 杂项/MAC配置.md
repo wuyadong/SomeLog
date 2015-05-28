@@ -6,7 +6,6 @@
 gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/)
 
 包括：
-
 - 系统配置
 - XCode
 - [HomeCrew](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/Homebrew/README.html)
@@ -22,12 +21,37 @@ gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/cont
 ```sh
 cd ~/apps
 mkdir homebrew && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
-ln -s /Users/xxx/apps/homebrew/bin/brew /usr/local/bin/brew
+ln -s /Users/xxx/apps/homebrew/bin/brew /usr/local/bin/brew //软连接
 ```
 软链接到/usr/local/bin目录下，我本机上默认没有/usr/local目录，还挺奇怪～～
 手动建立目录，并将其owner切换为自己的账户，这样就不用老是sudo了
+一些软件：
+- jenv //java环境管理软件，汗啊这个软件有两个同名的，http://www.jenv.be/ 与 http://jenv.io/ 最近不用Java，不想尝试下，下次尝试下后面一个，看起来好用点。
+- pyenv //python环境管理软件
+- wget //命令行下载神器，一些脚本什么经常需要
+###安装cask
+cask用来安装管理GUI软件，不建议用，这个软件安装后不能在应用文件夹直接找到，不是特别方便。安装一些不太好下的软件挺好
+```sh
+$ brew install caskroom/cask/brew-cask
+$ brew update && brew upgrade brew-cask && brew cleanup // 更新
+```
+一些软件：
+- google-chrome // Google 浏览器
+- unrar  //rar解压软件，国内你懂的
 
 ----
+##gem国内源
+https://ruby.taobao.org/
+```sh
+$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
+$ gem sources -l
+*** CURRENT SOURCES ***
+
+https://ruby.taobao.org
+# 请确保只有 ruby.taobao.org
+$ gem install rails
+```
 ## 一些快捷键设置
 
 没有触摸和苹果鼠标
@@ -78,4 +102,4 @@ sudo kextload /System/Library/Extensions/AppleHDA.kext
 
 -----
 ##一些软件
-rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
+1. rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
