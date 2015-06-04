@@ -3,6 +3,7 @@
 
 ###iOS程序启动过程分析
 使用Xcode模板创建空白iOS应用，在Supporting Files目录中会有main.m，里面包含了main函数，obj-c是C的超集，启动入口和C是一样的，标准的ansi C方式。
+
 ```obj-c
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
@@ -56,11 +57,12 @@ http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libsyscall/mach/mach_ms
       2651 __workq_kernreturn  (in libsystem_kernel.dylib) + 10  [0x2f83e6a]
 ```
 
-上面是自己的一些分析。下面有些文档讲的非常清楚：
+上面是自己的一些分析。苹果的文档讲的非常清楚：
 
 参考文档:
-http://stackoverflow.com/questions/17366107/what-is-the-launch-sequence-of-an-ios-app
-https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html
+- http://stackoverflow.com/questions/17366107/what-is-the-launch-sequence-of-an-ios-app
+- https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/StrategiesforHandlingAppStateTransitions/StrategiesforHandlingAppStateTransitions.html
+- https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html
 
 ### obj-c中self. 与 _ 差别
 obj-c 类中访问类变量有两种方式，写代码时候发现两者是有差别的：

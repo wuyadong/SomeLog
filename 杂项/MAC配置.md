@@ -38,6 +38,7 @@ $ brew update && brew upgrade brew-cask && brew cleanup // 更新
 一些软件：
 - google-chrome // Google 浏览器
 - unrar  //rar解压软件，国内你懂的
+- keka //开源解压软件，底层是p7zip，支持的类型比较多
 
 ----
 ##gem国内源
