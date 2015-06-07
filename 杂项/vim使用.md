@@ -1,5 +1,13 @@
 #vim使用
 
+##安装
+Mac自带的vim版本比较老，用homebrew更新下
+```sh
+brew install macvim                              #gui版本vim; mvim/gvim
+brew install vim                                 #command版本vim
+sudo mv /usr/bin/vim /usr/bin/vim73     #将原版vim备份
+```
+
 
 ##16进制方式编辑文件
 1.首先以二进制方式编辑这个文件  
