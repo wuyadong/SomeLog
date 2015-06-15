@@ -1,3 +1,5 @@
 .tmp/
 .media/
 .DS_Store
+
+.tags
