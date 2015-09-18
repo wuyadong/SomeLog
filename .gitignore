@@ -1,5 +1,6 @@
 .tmp/
 .media/
+Guide.localized/
 .DS_Store
 
 .tags
