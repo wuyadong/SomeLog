@@ -6,11 +6,14 @@
 gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/)
 
 包括：
+
 - 系统配置
 - XCode
 - [HomeCrew](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/Homebrew/README.html)
 - [iTerm2](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/README.html) 可以直接 brew cask install iterm2
 - [GIT](http://aaaaaashu.gitbooks.io/mac-dev-setup/content/Git/README.html)等
+
+/usr/local/include 路径没有包含在系统路径中：http://superuser.com/questions/894958/mac-os-x-xcode-libraries
 
 ##HomeBrew
 ###安装homebrew
