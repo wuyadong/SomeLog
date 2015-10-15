@@ -8,6 +8,7 @@ brew install vim                                 #command版本vim
 sudo mv /usr/bin/vim /usr/bin/vim73     #将原版vim备份
 ```
 
+我现在还是喜欢用自带的，brew 安装的版本估计是配置原因吧，使用起来总是乖乖的。
 
 ##16进制方式编辑文件
 1.首先以二进制方式编辑这个文件  

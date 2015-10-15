@@ -16,6 +16,9 @@ Applications/Xcode.app/Contents/Developer/Platforms/
 lldb是debug工具，对比gdb，刚试用发现真都不会用啊，怎么断点都不会设置了~~囧~~
 lldb与gdb命令对比 http://lldb.llvm.org/lldb-gdb.html
 
+## plutil
+查看、修改、转换 plist 文件工具
+
 ##file
 检查文件类型，以QQ为例：
 ```sh
