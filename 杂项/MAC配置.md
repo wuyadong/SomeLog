@@ -107,3 +107,5 @@ sudo kextload /System/Library/Extensions/AppleHDA.kext
 -----
 ##一些软件
 1. rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
+
+macos下netstat只能显示被占用的端口号，不过可以在通过lsof -i：端口号
