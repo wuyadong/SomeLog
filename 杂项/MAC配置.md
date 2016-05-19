@@ -109,3 +109,17 @@ sudo kextload /System/Library/Extensions/AppleHDA.kext
 1. rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
 
 macos下netstat只能显示被占用的端口号，不过可以在通过lsof -i：端口号
+
+
+
+mongod --config /usr/local/etc/mongod.conf
+
+### redis
+通过homebrew安装redis,因为安装了anaconda，里面自带redis，但是版本比较老，将其移除
+
+```sh
+conda remove redis  # 移除
+rm ~/.pyenv/shime/redis* #conda 移除redis时，pyenv中没有正确移除，手动移除 
+brew install redis  # 安装
+redis-server /usr/local/etc/redis.conf
+```
