@@ -8,7 +8,8 @@ brew install vim                                 #command版本vim
 sudo mv /usr/bin/vim /usr/bin/vim73     #将原版vim备份
 ```
 
-我现在还是喜欢用自带的，brew 安装的版本估计是配置原因吧，使用起来总是乖乖的。
+我现在还是喜欢用自带的，brew 安装的版本估计是配置原因吧，使用起来总是怪怪的。
+MacVim 用起来还不错
 
 ##16进制方式编辑文件
 1.首先以二进制方式编辑这个文件  
@@ -27,3 +28,8 @@ vi -b datafile
 
 3.转换16进制回来vi  
 :%!xxd -r
+
+## 插件
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
