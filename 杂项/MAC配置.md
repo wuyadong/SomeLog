@@ -15,6 +15,18 @@ gitbook [Mac 开发配置手册](http://aaaaaashu.gitbooks.io/mac-dev-setup/cont
 
 /usr/local/include 路径没有包含在系统路径中：http://superuser.com/questions/894958/mac-os-x-xcode-libraries
 
+## BASH
+```
+# Set COLOR
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
+# export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
+
+alias ls='ls -GF'
+alias ll='ls -l'
+alias la='ls -a'
+```
+
 ##HomeBrew
 ###安装homebrew
 [github上安装说明](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md),但是不知道为何homebrew的主页打不开，所以用了手动方式进行安装。
