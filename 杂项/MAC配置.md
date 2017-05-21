@@ -55,6 +55,46 @@ $ brew update && brew upgrade brew-cask && brew cleanup // 更新
 - unrar  //rar解压软件，国内你懂的
 - keka //开源解压软件，底层是p7zip，支持的类型比较多
 
+## docker
+
+```sh
+brew install docker docker-compose docker-machine
+
+# https://github.com/zchee/docker-machine-driver-xhyve
+brew install docker-machine-driver-xhyve
+# docker-machine-driver-xhyve need root owner and uid
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+
+# create deault
+docker-machine create --driver xhyve default
+```
+
+```sh
+# To have launchd start docker-machine now and restart at login:
+  brew services start docker-machine
+# Or, if you don't want/need a background service you can just run:
+  docker-machine start
+```
+
+使用官方下载安装
+```
+wget -c https://download.docker.com/mac/stable/Docker.dmg
+```
+
+安装 shell completion
+
+```
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion /usr/local/etc/bash_completion.d/docker
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion /usr/local/etc/bash_completion.d/docker-machine
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion /usr/local/etc/bash_completion.d/docker-compose
+
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion /usr/local/share/zsh-completions/_docker
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.zsh-completion /usr/local/share/zsh-completions/_docker-machine
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion /usr/local/share/zsh-completions/_docker-compose
+
+```
+
 ----
 ##gem国内源
 https://ruby.taobao.org/
@@ -101,6 +141,7 @@ diskutil unmountDisk xxx #将NTFS磁盘卸载掉，如果是单个分区，用un
 sudo rm -rf xxx #将/Volumes下原来的挂载点目录删掉，否则后续挂载会出错
 ```
 重启系统
+
 ###将挂载目录放到Finder
 因为上面使用了nobrowse参数，重启Finder会看不到，使用不方便
 在Finder使用快捷键 shift+command+G 跳转到/Volumes，然后将需要用的目录拖到个人收藏即可
@@ -121,7 +162,6 @@ sudo kextload /System/Library/Extensions/AppleHDA.kext
 1. rar解压：利用brew搜了下，发现有个unrar，brew install unrar，命令行挺好用，;-)
 
 macos下netstat只能显示被占用的端口号，不过可以在通过lsof -i：端口号
-
 
 
 mongod --config /usr/local/etc/mongod.conf
